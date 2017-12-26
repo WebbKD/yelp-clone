@@ -1,0 +1,17 @@
+<ActionBar class="action-bar" style="background-color: orange;">
+    <Label class="action-bar-title" text="Foodies" ></Label>
+</ActionBar>
+
+<GridLayout class="page">
+	<StackLayout>
+	<TextField class="input input-border" hint="Enter City" [(ngModel)]="cityName" row="1" col="1"></TextField>
+	<Button text="Locate" class="submit-button" style="background-color: yellow;" (tap)="locateFood()"></Button>
+	<ListView [items]="locations">
+		<ng-template let-item="item">
+			<StackLayout>
+				<label style="padding: 5 7; color: red;" [text]="item.name" (tap)="navigateToDetails(item.place_id)"> </label>
+			</StackLayout>
+		</ng-template>
+	</ListView>
+</StackLayout>
+</GridLayout>

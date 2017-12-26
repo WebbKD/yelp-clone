@@ -1,0 +1,27 @@
+<ActionBar class="action-bar" style="background-color: orange;">>
+    <Label class="action-bar-title" text="Foodies"></Label>
+</ActionBar>
+
+<GridLayout class="page">
+	<StackLayout>
+			<Image src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&photoreference={{this.placeImgRef}}&key=AIzaSyB9_rZkYLtiEi2kQnloXyWrScs6xIwQ914" style="height: 600px;" stretch="aspectFill"></Image>
+
+		    <label text='Name: {{placeName}}'></label>
+			<label text='Address: {{placeAddress}}'></label>
+			<label text= 'Phone#: {{placePhoneNumber}}'></label>
+			<label text= 'Rating: {{placeRating}}'></label>
+			<label text= 'Price: {{placePrice}}/5' ></label>
+			<StackLayout style="margin-top: 40px">
+				<GridLayout columns="*,*" rows="auto">
+					<Image src='{{placeReviewImg}}'  style="height: 250px; width: 300px" col="0" ></Image>
+				<StackLayout col="2">
+					<label text='Name: {{placeReviewName}}'></label>
+					<label text='Rating: {{placeReviewRating}}'></label>
+				</StackLayout>
+			</GridLayout>
+				<label text=' Review: {{placeReviewText}}' textWrap="true"></label>
+			</StackLayout>
+			<WebView [src]="webViewSrc"></WebView>
+
+</StackLayout>
+</GridLayout>
